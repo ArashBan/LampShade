@@ -1,6 +1,4 @@
 ﻿@model ShopManagement.Application.Contracts.ProductCategory.CreateProductCategory
-@{
-}
 
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -33,7 +31,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label asp-for="Picture" class="control-label">عکس</label>
-                    <input type="file" class="form-control" asp-for="Picture" accept="image/*">
+                    <input type="text" class="form-control" asp-for="Picture">
                     <span asp-validation-for="Picture" class="error"></span>
                 </div>
             </div>
@@ -48,7 +46,7 @@
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label asp-for="PictureTitle" class="control-label">عنوان</label>
+                    <label asp-for="PictureTitle" class="control-label">عنوان عکس</label>
                     <input type="text" class="form-control" asp-for="PictureTitle">
                     <span asp-validation-for="PictureTitle" class="error"></span>
                 </div>
