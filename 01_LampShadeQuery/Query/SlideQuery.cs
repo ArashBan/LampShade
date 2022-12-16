@@ -1,12 +1,11 @@
 ﻿using _01_LampShadeQuery.Contracts.Slide;
 using ShopManagement.Infrastructure.EFCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace _01_LampShadeQuery.Query
 {
-    public class SlideQuery : ISlideQueryModel
+    public class SlideQuery : ISlideQuery
     {
         private readonly ShopContext _shopContext;
 

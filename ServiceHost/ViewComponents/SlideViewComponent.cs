@@ -1,13 +1,13 @@
-﻿using _01_LampShadeQuery.Query;
+﻿using _01_LampShadeQuery.Contracts.Slide;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ServiceHost.ViewComponents
 {
-    public class SlideViewComponents : ViewComponent
+    public class SlideViewComponent : ViewComponent
     {
-        private readonly SlideQuery _slideQuery;
+        private readonly ISlideQuery _slideQuery;
 
-        public SlideViewComponents(SlideQuery slideQuery)
+        public SlideViewComponent(ISlideQuery slideQuery)
         {
             _slideQuery = slideQuery;
         }

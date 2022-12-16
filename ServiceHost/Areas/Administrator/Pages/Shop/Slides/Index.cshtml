@@ -1,7 +1,5 @@
 ﻿@page
 @model ServiceHost.Areas.Administrator.Pages.Shop.Slide.IndexModel
-@{
-}
 
 @{
     Layout = "Shared/_AdminLayout";
@@ -21,7 +19,7 @@
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">لیست اسلایدها</h3>
+                <h3 class="panel-title">لیست اسلایدها (@Model.Slides.Count)</h3>
             </div>
             <div class="panel-body">
                 <div class="row">
