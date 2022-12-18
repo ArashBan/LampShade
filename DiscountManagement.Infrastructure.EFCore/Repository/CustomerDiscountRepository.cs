@@ -1,10 +1,10 @@
 ﻿using _0_Framework.Application;
 using _0_Framework.Infrastructure;
-using DiscountManagement.Application.Contracts.CustomerDiscount;
 using DiscountManagement.Domain.CustomerDiscountAgg;
 using ShopManagement.Infrastructure.EFCore;
 using System.Collections.Generic;
 using System.Linq;
+using DiscountManagement.Application.Contract.CustomerDiscount;
 
 namespace DiscountManagement.Infrastructure.EFCore.Repository
 {

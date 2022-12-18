@@ -1,6 +1,6 @@
 ﻿using DiscountManagement.Application;
 using DiscountManagement.Application.Contract.ColleagueDiscount;
-using DiscountManagement.Application.Contracts.CustomerDiscount;
+using DiscountManagement.Application.Contract.CustomerDiscount;
 using DiscountManagement.Domain.ColleagueDiscountAgg;
 using DiscountManagement.Domain.CustomerDiscountAgg;
 using DiscountManagement.Infrastructure.EFCore;

@@ -1,4 +1,4 @@
-﻿namespace DiscountManagement.Application.Contracts.CustomerDiscount
+﻿namespace DiscountManagement.Application.Contract.CustomerDiscount
 {
     public class EditCustomerDiscount : DefineCustomerDiscount
     {

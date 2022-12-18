@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DiscountManagement.Application.Contracts.CustomerDiscount
+namespace DiscountManagement.Application.Contract.CustomerDiscount
 {
     public class CustomerDiscountViewModel
     {

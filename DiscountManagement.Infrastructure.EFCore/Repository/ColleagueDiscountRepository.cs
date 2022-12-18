@@ -12,6 +12,7 @@ namespace DiscountManagement.Infrastructure.EFCore.Repository
     {
         private readonly DiscountContext _context;
         private readonly ShopContext _shopContext;
+
         public ColleagueDiscountRepository(DiscountContext context, ShopContext shopContext) : base(context)
         {
             _context = context;
@@ -36,7 +37,8 @@ namespace DiscountManagement.Infrastructure.EFCore.Repository
                 Id = x.Id,
                 CreationDate = x.CreationDate.ToFarsi(),
                 DiscountRate = x.DiscountRate,
-                ProductId = x.ProductId
+                ProductId = x.ProductId,
+                IsRemoved = x.IsRemoved
             });
 
             if (searchModel.ProductId > 0)

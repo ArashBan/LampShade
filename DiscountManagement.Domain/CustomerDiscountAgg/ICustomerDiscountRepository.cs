@@ -1,6 +1,6 @@
 ﻿using _0_Framework.Domain;
-using DiscountManagement.Application.Contracts.CustomerDiscount;
 using System.Collections.Generic;
+using DiscountManagement.Application.Contract.CustomerDiscount;
 
 namespace DiscountManagement.Domain.CustomerDiscountAgg
 {
