@@ -50,6 +50,7 @@ namespace ServiceHost
             {
                 endpoints.MapRazorPages();
                 endpoints.MapDefaultControllerRoute();
+                endpoints.MapControllers();
             });
         }
     }
