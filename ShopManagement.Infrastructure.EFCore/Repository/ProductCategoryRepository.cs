@@ -18,23 +18,28 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
 
         public EditProductCategory GetDetails(long id)
         {
-            return _context.ProductCategories.Select(x => new EditProductCategory()
+            return _context.ProductCategories.Select(x => new EditProductCategory
             {
                 Id = x.Id,
                 Description = x.Description,
                 Name = x.Name,
                 Keywords = x.Keywords,
                 MetaDescription = x.MetaDescription,
-                Picture = x.Picture,
+                //Picture = x.Picture,
                 PictureAlt = x.PictureAlt,
                 PictureTitle = x.PictureTitle,
                 Slug = x.Slug
             }).FirstOrDefault(x => x.Id == id);
         }
 
+        public string GetSlugBy(long id)
+        {
+            return _context.ProductCategories.Select(x => new { x.Id, x.Slug }).FirstOrDefault(x => x.Id == id)?.Slug;
+        }
+
         public List<ProductCategoryViewModel> GetProductCategories()
         {
-            return _context.ProductCategories.Select(x => new ProductCategoryViewModel()
+            return _context.ProductCategories.Select(x => new ProductCategoryViewModel
             {
                 Id = x.Id,
                 Name = x.Name,
@@ -43,7 +48,7 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
 
         public List<ProductCategoryViewModel> Search(ProductCategorySearchModel searchModel)
         {
-            var query = _context.ProductCategories.Select(x => new ProductCategoryViewModel()
+            var query = _context.ProductCategories.Select(x => new ProductCategoryViewModel
             {
                 Id = x.Id,
                 Name = x.Name,
