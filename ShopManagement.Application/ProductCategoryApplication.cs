@@ -19,13 +19,16 @@ namespace ShopManagement.Application
         public OperationResult Create(CreateProductCategory command)
         {
             var operation = new OperationResult();
-
             if (_productCategoryRepository.Exists(x => x.Name == command.Name))
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
 
             var slug = command.Slug.Slugify();
+
+            var picturePath = $"{command.Slug}";
+            var pictureName = _fileUploader.Upload(command.Picture, picturePath);
+
             var productCategory = new ProductCategory(command.Name, command.Description,
-                "", command.PictureAlt, command.PictureTitle, command.Keywords,
+                pictureName, command.PictureAlt, command.PictureTitle, command.Keywords,
                 command.MetaDescription, slug);
 
             _productCategoryRepository.Create(productCategory);

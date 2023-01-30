@@ -22,11 +22,16 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
             return _context.ProductPictures.Select(x => new EditProductPicture
             {
                 Id = id,
-                Picture = x.Picture,
                 PictureAlt = x.PictureAlt,
                 PictureTitle = x.PictureTitle,
                 ProductId = x.ProductId
             }).FirstOrDefault(x => x.Id == id);
+        }
+
+        public ProductPicture GetWithProductAndCategoryBy(long id)
+        {
+            return _context.ProductPictures.Include(x => x.Product).ThenInclude(x => x.Category)
+                .FirstOrDefault(x => x.Id == id);
         }
 
         public List<ProductPictureViewModel> Search(ProductPictureSearchModel searchModel)
