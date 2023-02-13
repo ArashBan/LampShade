@@ -2,6 +2,7 @@
 using ShopManagement.Domain.ProductCategoryAgg;
 using ShopManagement.Domain.ProductPictureAgg;
 using System.Collections.Generic;
+using ShopManagement.Domain.CommentAgg;
 
 namespace ShopManagement.Domain.ProductAgg
 {
@@ -19,6 +20,7 @@ namespace ShopManagement.Domain.ProductAgg
         public string Keywords { get; private set; }
         public string MetaDescription { get; private set; }
         public ProductCategory Category { get; private set; }
+        public List<Comment> Comments { get; private set; }
         public List<ProductPicture> ProductPictures { get; private set; }
 
         protected Product()
