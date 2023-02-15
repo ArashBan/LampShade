@@ -18,6 +18,21 @@ namespace _01_LampShadeQuery.Query
             _context = context;
         }
 
+        public List<ArticleCategoryQueryModel> GetArticleCategories()
+        {
+            return _context.ArticleCategories
+                .Include(x => x.Articles)
+                .Select(x => new ArticleCategoryQueryModel
+                {
+                    Name = x.Name,
+                    Picture = x.Picture,
+                    PictureAlt = x.PictureAlt,
+                    PictureTitle = x.PictureTitle,
+                    Slug = x.Slug,
+                    ArticlesCount = x.Articles.Count
+                }).ToList();
+        }
+
         public ArticleCategoryQueryModel GetArticleCategory(string slug)
         {
             var articleCategory = _context.ArticleCategories
@@ -55,21 +70,6 @@ namespace _01_LampShadeQuery.Query
                 PictureTitle = x.PictureTitle,
                 PublishDate = x.PublishDate.ToFarsi(),
             }).ToList();
-        }
-
-        public List<ArticleCategoryQueryModel> GetArticleCategories()
-        {
-            return _context.ArticleCategories
-                .Include(x => x.Articles)
-                .Select(x => new ArticleCategoryQueryModel
-                {
-                    Name = x.Name,
-                    Picture = x.Picture,
-                    PictureAlt = x.PictureAlt,
-                    PictureTitle = x.PictureTitle,
-                    Slug = x.Slug,
-                    ArticlesCount = x.Articles.Count
-                }).ToList();
         }
     }
 }
