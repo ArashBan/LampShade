@@ -25,7 +25,7 @@ namespace ServiceHost.Areas.Administrator.Pages.Blog.ArticleCategories
 
         public IActionResult OnGetCreate()
         {
-            return Partial("./Create", new CreateArticleCategory());
+            return Partial("./Register", new CreateArticleCategory());
         }
 
         public JsonResult OnPostCreate(CreateArticleCategory command)

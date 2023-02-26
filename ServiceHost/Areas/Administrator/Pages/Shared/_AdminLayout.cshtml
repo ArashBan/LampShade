@@ -20,7 +20,7 @@
     <link href="~/AdminTheme/assets/css/material-design-iconic-font.min.css" rel="stylesheet">
 
     <!-- animate css -->
-    @*<link href="~/AdminTheme/assets/scss/animate.css" rel="stylesheet" />*@
+    <link href="~/AdminTheme/assets/css/animate.css" rel="stylesheet" />
 
     <!-- Waves-effect -->
     <link href="~/AdminTheme/assets/css/waves-effect.css" rel="stylesheet">
@@ -33,10 +33,11 @@
     <!-- Custom Files -->
     <link href="~/AdminTheme/assets/css/persian-datepicker.min.css" rel="stylesheet" />
 
+    @RenderSection("Css", false)
+
     <link href="~/AdminTheme/assets/css/helper.css" rel="stylesheet" type="text/css" />
     <link href="~/AdminTheme/assets/css/style.css" rel="stylesheet" type="text/css" />
     <script src="~/AdminTheme/assets/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="fixed-left">
